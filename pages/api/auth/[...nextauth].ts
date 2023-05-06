@@ -25,7 +25,8 @@ export default NextAuth({
         if (!user || !(await compare(password, user.password))) {
           throw new Error("Invalid username or password");
         }
-        return user;
+        console.log(user)
+        return { id: user.id, email: user.email };
       },
     }),
   ],
